@@ -38,6 +38,16 @@ It makes copy/paste and drag-and-drop across screens effortless.
 - **Persistent** — items (and their files) survive restarts.
 - **Auto-updates** via Sparkle. Clean, translucent, native SwiftUI.
 
+## Screenshots
+
+<p align="center">
+  <img src="assets/screenshot-shelf.png" alt="CopyCat shelf with items" width="320">
+  &nbsp;&nbsp;
+  <img src="assets/screenshot-empty.png" alt="CopyCat empty drop state" width="320">
+</p>
+
+<p align="center"><i>Smart-typed items with copy-order numbers · the drop-anything panel</i></p>
+
 ## Install
 
 **Download:** grab the latest signed & notarized `CopyCat.dmg` from

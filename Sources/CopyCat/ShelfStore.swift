@@ -23,9 +23,14 @@ final class ShelfStore: ObservableObject {
     private var lastChangeCount = NSPasteboard.general.changeCount
 
     init() {
-        let support = FileManager.default.urls(for: .applicationSupportDirectory,
-                                               in: .userDomainMask).first!
-        baseURL = support.appendingPathComponent("CopyCat", isDirectory: true)
+        // COPYCAT_DATA_DIR isolates the shelf (used for tests/screenshots).
+        if let override = ProcessInfo.processInfo.environment["COPYCAT_DATA_DIR"] {
+            baseURL = URL(fileURLWithPath: override, isDirectory: true)
+        } else {
+            let support = FileManager.default.urls(for: .applicationSupportDirectory,
+                                                   in: .userDomainMask).first!
+            baseURL = support.appendingPathComponent("CopyCat", isDirectory: true)
+        }
         filesURL = baseURL.appendingPathComponent("files", isDirectory: true)
         manifestURL = baseURL.appendingPathComponent("manifest.json")
 

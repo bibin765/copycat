@@ -49,6 +49,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         installQuickPasteMonitor()
+
+        // Screenshot mode: open the panel on launch and print its window id so a
+        // capture script can grab it. Env-gated — no effect in normal use.
+        if ProcessInfo.processInfo.environment["COPYCAT_SCREENSHOT"] == "1" {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { [weak self] in
+                guard let self else { return }
+                self.positionPanel()
+                self.panel.makeKeyAndOrderFront(nil)
+                print("COPYCAT_WINDOW=\(self.panel.windowNumber)")
+                fflush(stdout)
+            }
+        }
     }
 
     // MARK: - Quick paste (press 1–9)
