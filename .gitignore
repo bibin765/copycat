@@ -1,0 +1,16 @@
+.build/
+build/
+dist/
+.DS_Store
+*.xcodeproj
+.swiftpm/
+
+# build artifacts
+*.dmg
+*.zip
+
+# generated art (regenerate via icon/build_icon.sh and icon/make_banner.swift)
+icon/AppIcon.icns
+icon/icon_1024.png
+icon/dmg_background.png
+assets/social.png

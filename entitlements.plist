@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!--
+      CopyCat is distributed outside the Mac App Store (Developer ID + notarized),
+      so it is NOT sandboxed. The Hardened Runtime is required for notarization.
+
+      Quick-paste uses the Accessibility API (a user-granted TCC permission at
+      runtime) — that needs no code entitlement here. No Apple Events are used.
+      This file is intentionally minimal; add keys only if a feature requires them.
+    -->
+</dict>
+</plist>
